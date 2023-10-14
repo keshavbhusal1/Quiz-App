@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/WelcomeFragment"
-        android:name="com.example.quizapp.WelcomeFragment"
+        android:name="com.example.quizapp.ui.WelcomeFragment"
         android:label=""
         tools:layout="@layout/fragment_welcome">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
+            android:id="@+id/action_WelcomeFragment_to_QuizFragment"
+            app:destination="@id/QuizFragment" />
     </fragment>
     <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.example.quizapp.SecondFragment"
+        android:id="@+id/QuizFragment"
+        android:name="com.example.quizapp.ui.quiz.QuizFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/fragment_quiz">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"

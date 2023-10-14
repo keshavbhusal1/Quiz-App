@@ -1,4 +1,4 @@
-package com.example.quizapp
+package com.example.quizapp.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.quizapp.R
+import com.example.quizapp.Username
 import com.example.quizapp.databinding.FragmentWelcomeBinding
 
 /**
@@ -38,11 +40,12 @@ class WelcomeFragment : Fragment() {
                 binding.filledTextField.error = "Enter User name"
             }else{
                 Username.saveUsername(binding.filledTextField.editText?.text.toString())
+                findNavController().navigate(R.id.action_WelcomeFragment_to_QuizFragment)
             }
         }
 
 //        binding.buttonFirst.setOnClickListener {
-//            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+//            findNavController().navigate(R.id.action_WelcomeFragment_to_QuizFragment)
 //        }
     }
 
