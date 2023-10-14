@@ -32,6 +32,15 @@ class WelcomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.btnLogin.setOnClickListener {
+            if (binding.filledTextField.editText?.text.toString().trim().isEmpty()){
+                binding.filledTextField.isErrorEnabled = true
+                binding.filledTextField.error = "Enter User name"
+            }else{
+                Username.saveUsername(binding.filledTextField.editText?.text.toString())
+            }
+        }
+
 //        binding.buttonFirst.setOnClickListener {
 //            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
 //        }
